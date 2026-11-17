@@ -7,6 +7,7 @@ Use cWebPanel.pkg
 Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
+Use cWebButton.pkg
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
@@ -79,7 +80,25 @@ Object oZoomJugador is a cWebView
                 Send NavigatePath
             End_Procedure
         End_Object 
+        
+        
+         Object oVerPosiciones_btn is a cWebButton
+           Set piColumnSpan to 6
+           Set psCaption to "Ver Posiciones"
+           Set pbRender to True
+           Set pbEnabled to True
+
+          WebRegisterPath ntNavigateForward oSelectPosicion
+
+          Procedure OnClick
+           Send NavigatePath
+           End_Procedure
+        End_Object 
+        
+        
     End_Object 
+    
+    
 
     Object oActionGroup is a cWebMenuGroup
 
