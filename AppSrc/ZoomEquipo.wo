@@ -10,6 +10,7 @@ Use cWebForm.pkg
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
+Use cWebButton.pkg
 
 Object oZoomEquipo is a cWebView
     Set piColumnCount to 12
@@ -50,6 +51,7 @@ Object oZoomEquipo is a cWebView
             Set peLabelPosition to lpTop
             Set psLabel to "Nombre"
             Set pbPromptButton to True
+            WebRegisterPath ntNavigateForward oSelectLiga
 
 // ToDo: Fill in the from-child parent Select view object name for navigate forward
 //            WebRegisterPath ntNavigateForward oSelectView
@@ -160,5 +162,6 @@ Object oZoomEquipo is a cWebView
         Send SetActionButtons
 
     End_Procedure
+
 
 End_Object 
