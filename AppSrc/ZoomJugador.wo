@@ -81,6 +81,15 @@ Object oZoomJugador is a cWebView
             End_Procedure
         End_Object 
         
+    // =========================================================================
+    // La pregunta de:¿Hay relacion entre ellas?
+    // Noexiste ninguna relacion padre-hijo declarada entre los 
+    // Data Dictionaries principales de ambas vistas ni un DDO servidor comun que las conecte dentro de la vista.
+    // Al no haber relacion entre las tablas implicadas, DataFlex pone la navegacion como Undefined. 
+    // Esto significa que no hay intercambio de datos de filtrado y
+    // simplemente se abre SelectPosicion mostrando todos los registros sin filtrar
+    // y al seleccionar uno no se devuelve ni actualiza ningun dato en ZoomJugador.
+    // =========================================================================
         
          Object oVerPosiciones_btn is a cWebButton
            Set piColumnSpan to 6

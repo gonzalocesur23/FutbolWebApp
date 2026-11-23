@@ -61,6 +61,18 @@ Object oSelectLiga is a cWebView
             Set piListRowSpan to 1
             Set psBtnCssClass to "WebButtonIcon WebIcon_Info"
             Set peAlign to alignRight
+            
+    // =========================================================================
+    // La pregunta de : ¿Que pasa con InvokingObject?
+    // En la navegacion FromMain, el InvokingObject es el control desde el que inicio la navegacion en la vista Select.
+    //    Al ir hacia adelante (Forward), este objeto lanza OnGetNavigateForwardData
+    //    para enviar el RowId del registro seleccionado hacia Zoom.
+    //    Al volver atras (Back) desde Zoom (tras guardar o pulsar volver), 
+    //    he desapilado la vista del ViewStack y lanzado OnNavigateBack 
+    //    directamente sobre ese InvokingObject original. Ahora entonces la lista
+    //    Select sabe que debe refrescarse automaticamente y mantener el foco
+    //    en el registro actualizado.
+    // =========================================================================
 
             WebRegisterPath ntNavigateForward oZoomLiga
 
