@@ -13,28 +13,15 @@ Use cWebColumn.pkg
 
 Object oDashboard is a cWebView
 
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-    // Add a DDO Structure 
-    //
-    // There is no need to synchronize a DD structure on the client so we do
-    // not set the Server property or send ADDOStructure. We will simply use
-    // DDO's to mine data and generate HTML for our cWebHTMLBox objects.
-    // It is the HTML in these objects that is sent to the client each time 
-    // this page is shown.
-    //
-    // Also, it is important for the drill-down Navigation interface that we
-    // do not set the Server property to some DDO because this will affect 
-    // constraints in the next view that we navigate to.
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
     Set piMaxWidth to 1024
     
-    Set psCaption to "Dashboard"
+    Set psCaption to "Gestión Deportiva de Futbol"
     Set peViewType to vtUndefined
     Set pbShowCaption to False
     Set psCSSClass to "Dashboard"
     
     Object oWebMainPanel is a cWebPanel
+        Set psCSSClass to "Panel_Sin_Fondo"
         Set piColumnCount to 24
         
         // - - - - - - - - - - - - - - -
@@ -44,13 +31,15 @@ Object oDashboard is a cWebView
         WebSetResponsive piColumnCount rmTabletPortrait to 16
     
         Object oTiles_grp is a cWebGroup
+            Set psCSSClass to "Panel_Sin_Fondo"
             Set piColumnSpan to 24
             Set pbShowBorder to False
             Set pbShowCaption to False
             Set piColumnCount to 12
             
-            Set psCSSClass to "TilesGroup"
-    
+           // Set psCSSClass to "TilesGroup"
+            
+           
             Object oTileLiga is a cWebHtmlBox
                 Set pbServerOnClick to True
                 Set piColumnSpan to 6
